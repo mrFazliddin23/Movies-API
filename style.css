@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    background-color: rgb(23, 24, 23);
+}
+
+.container {
+    max-width: 1400px;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+.loader-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.loader {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    border: 3px solid;
+    border-color: #FFF #FFF transparent transparent;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+.loader::after,
+.loader::before {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border: 3px solid;
+    border-color: transparent transparent #FF3D00 #FF3D00;
+    width: 192px;
+    height: 192px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    animation: rotationBack 0.5s linear infinite;
+    transform-origin: center center;
+}
+
+.loader::before {
+    width: 150px;
+    height: 150px;
+    border-color: #FFF #FFF transparent transparent;
+    animation: rotation 1.5s linear infinite;
+}
+
+#movies {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.movies__card {
+    border: 2px solid beige;
+    margin-bottom: 40px;
+    height: 400px;
+}
+
+.movies__card--img {
+    max-width: 420px;
+    width: 100%;
+    height: 250px;
+}
+
+.not-found {
+    text-align: center;
+    color: red;
+    font-size: 110px;
+    font-weight: 600;
+    margin-top: 20px;
+    max-width: 100%;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.pagination_btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border: 1px solid rgb(152, 149, 149);
+    background-color: #bdb7b7;
+    color: black;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.active {
+    background-color: cadetblue;
+    border: 1px solid rgb(114, 129, 130);
+    color: #ffffff;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotationBack {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+}
